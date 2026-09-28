@@ -44,13 +44,6 @@ function drawSketch(force) {
 }
 document.getElementById('replay')?.addEventListener('click', () => drawSketch(true));
 
-// ---------- Lightbox ----------
-const lb = document.getElementById('lightbox');
-document.querySelectorAll('.shot img').forEach(img =>
-  img.addEventListener('click', () => { lb.querySelector('img').src = img.src; lb.querySelector('img').alt = img.alt; lb.classList.add('open'); }));
-lb.addEventListener('click', () => lb.classList.remove('open'));
-document.addEventListener('keydown', e => e.key === 'Escape' && lb.classList.remove('open'));
-
 // ---------- Theme toggle ----------
 const root = document.documentElement;
 try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (e) {}
