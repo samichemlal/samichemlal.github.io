@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sami Chemlal</title>
+  <meta name="description" content="Sami Chemlal — applied mathematics and machine learning at CentraleSupélec. Research on operator learning, optimal transport and multi-task learning for dynamical systems.">
+  <meta property="og:title" content="Sami Chemlal">
+  <meta property="og:description" content="Scientific machine learning, optimal transport, operator learning for dynamical systems.">
+  <meta property="og:image" content="assets/img/djurdjura-train.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b5bb0'/%3E%3Cpath d='M6 46 L20 26 L28 34 L38 18 L58 46 Z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- Icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2 .9V18h16V6.4l-8 5.6-8-5.6zM5.6 6h12.8L12 10.5 5.6 6z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2h8l6 6v14H6V2zm7 1.5V9h5.5L13 3.5zM8 13h8v1.5H8V13zm0 3.5h8V18H8v-1.5z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M11 3h2v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6V3zM4 19h16v2H4v-2z"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#about">Sami Chemlal</a>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#about">About me</a>
+      <a href="#publications">Publications</a>
+      <a href="#courses">Courses</a>
+      <a href="#cv">CV</a>
+      <a href="#landscapes">Landscapes</a>
+    </nav>
+    <button class="theme-btn" id="theme" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= ABOUT ================= -->
+  <section class="view" id="about">
+    <div class="hero">
+      <figure class="cover" style="margin:0">
+        <img src="assets/img/djurdjura-train.jpg" alt="A blue train crossing green fields below the snow-capped Djurdjura range">
+        <figcaption>View of the Djurdjura from Imcheddalen — southern side of Kabylie</figcaption>
+      </figure>
+      <div class="profile">
+        <img class="portrait" src="assets/img/portrait.jpg" alt="Portrait of Sami Chemlal">
+        <div class="identity">
+          <h1>Sami Chemlal</h1>
+          <p class="headline">Applied Mathematics &amp; Machine Learning · CentraleSupélec</p>
+          <p class="location">Paris, France · formerly research intern at CMAP, École Polytechnique</p>
+          <div class="links">
+            <a class="btn primary" href="mailto:samychemlal@yahoo.fr"><svg><use href="#i-mail"/></svg>samychemlal@yahoo.fr</a>
+            <a class="btn" href="https://github.com/samichemlal"><svg><use href="#i-github"/></svg>GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/sami-rayan-chemlal-6b5881250/"><svg><use href="#i-linkedin"/></svg>LinkedIn</a>
+            <a class="btn" href="#cv"><svg><use href="#i-doc"/></svg>CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="bio">
+        <h2 class="section-title" style="margin-top:0">About me</h2>
+        <p>I am an engineering student in <b>Applied Mathematics, Machine Learning &amp; Statistics</b> at CentraleSupélec (MSc-equivalent, 2023–2027), after preparatory classes (MPSI–PSI*) at Lycée du Parc in Lyon.</p>
+        <p>From March to August 2026 I was a research intern at <b>CMAP, École Polytechnique</b>, supervised by Rémi Flamary, Karim Lounici and Thibaut Germain. I worked on learning from <i>populations</i> of related systems: how to share structure across many dynamical systems or conditional distributions, so that a new one can be estimated from very little data. This led to two manuscripts, <a href="#publications">DOODL and MTL-CMO</a>.</p>
+        <p>Before that I was a quantitative research intern on the front office of Crédit Agricole CIB. I also coach the Algerian national team for the International Olympiad in AI; my <a href="#courses">course notes</a> are online.</p>
+
+        <p class="label">Research interests</p>
+        <div class="chips">
+          <span class="chip">Scientific Machine Learning</span>
+          <span class="chip">Optimization &amp; Optimal Transport</span>
+          <span class="chip">Operator Learning</span>
+          <span class="chip">Learning for Physical &amp; Dynamical Systems</span>
+          <span class="chip">Multitask &amp; Transfer Learning</span>
+          <span class="chip">Representation Learning</span>
+          <span class="chip">Generative Modeling</span>
+          <span class="chip">Uncertainty Quantification</span>
+        </div>
+
+        <p class="label">Also</p>
+        <div class="chips">
+          <span class="chip green">Ranked 4th, CentraleSupélec international entrance exam</span>
+          <span class="chip green">Silver medal, AEFE International Chemistry Olympiad 2020</span>
+          <span class="chip green">QRT Data Challenge: 36th / 1,447</span>
+        </div>
+      </div>
+
+      <figure class="card sketch-card" id="sketch" style="margin:0">
+        <svg viewBox="0 0 415 560" role="img" aria-label="Line drawing of Sami's face">
+<path pathLength="1" data-len="698" d="M80.0 414.6 L77.6 400.0 L76.4 368.0 L73.0 350.0 L71.8 328.0 L73.5 322.0 L79.0 313.8 L81.2 309.0 L85.1 287.0 L91.5 259.0 L96.0 245.5 L99.7 239.0 L104.0 235.8 L110.0 234.7 L139.0 236.8 L153.0 238.9 L159.8 238.0 L162.0 236.0 L161.9 234.0 L150.1 217.0 L149.1 214.0 L149.3 211.0 L150.8 208.0 L153.9 205.0 L164.0 199.6 L175.4 192.0 L184.0 188.3 L196.0 185.5 L203.0 185.4 L221.0 187.4 L242.0 183.0 L254.8 178.0 L279.0 165.2 L284.0 163.4 L289.0 162.8 L296.0 164.2 L303.0 168.1 L312.0 176.6 L319.0 185.2 L323.0 193.0 L329.0 209.0 L333.6 234.0 L334.1 244.0 L332.0 265.0 L336.3 296.0 L337.9 321.0 L330.4 384.0 L329.8 401.0 L328.4 414.0"/>
+<path pathLength="1" data-len="426" d="M78.0 395.0 L79.7 411.0 L82.8 426.8 L91.0 452.5 L97.8 467.2 L103.0 476.7 L112.0 490.1 L118.7 498.5 L129.8 510.1 L142.1 520.6 L155.5 529.7 L165.0 535.0 L179.9 541.6 L190.3 545.0 L200.8 547.1 L211.5 548.0 L222.1 547.4 L232.7 545.4 L243.1 542.1 L258.0 535.3 L276.0 523.2 L284.1 516.1 L295.2 504.2 L301.8 495.7 L310.5 482.1 L317.8 467.7 L321.8 457.7 L326.5 442.3 L328.8 431.8 L330.7 415.8 L331.0 405.0"/>
+<path pathLength="1" data-len="126" d="M183.6 343.0 L186.0 342.7 L187.1 345.0 L181.1 353.0 L177.0 374.0 L177.3 379.0 L179.8 384.0 L188.0 388.0 L190.3 391.0 L190.7 393.0 L188.0 393.6 L182.0 391.1 L176.0 387.4 L174.0 384.9 L172.6 379.0 L172.4 374.0 L173.5 367.0 L178.0 353.0 L183.6 343.0"/>
+<path pathLength="1" data-len="49" d="M193.5 377.0 L198.0 376.1 L205.0 377.5 L208.3 380.0 L210.5 383.0 L211.2 385.0 L210.0 386.6 L203.0 386.7 L192.0 382.9 L191.2 382.0 L191.2 380.0 L193.5 377.0"/>
+<path pathLength="1" data-len="44" d="M239.5 276.0 L241.0 275.8 L242.0 277.0 L242.7 281.0 L238.9 286.0 L236.1 294.0 L235.0 294.5 L234.0 292.6 L234.0 285.0 L236.0 280.1 L239.5 276.0"/>
+<path pathLength="1" data-len="110" d="M243.7 375.0 L251.0 374.9 L254.0 375.8 L254.2 377.0 L253.3 380.0 L250.2 385.0 L249.1 389.0 L244.0 393.2 L241.4 393.0 L241.2 391.0 L247.5 385.0 L249.1 382.0 L248.0 380.7 L243.0 383.5 L231.0 391.1 L226.0 391.9 L224.0 394.8 L223.0 395.2 L222.5 394.0 L223.7 392.0 L226.0 390.7 L228.9 387.0 L239.0 377.5 L243.7 375.0"/>
+<path pathLength="1" data-len="176" d="M143.0 274.0 L161.0 273.8 L174.0 276.5 L182.0 280.2 L185.2 285.0 L185.1 287.0 L183.0 288.7 L174.8 287.0 L172.0 280.7 L169.0 278.5 L167.0 278.2 L165.2 280.0 L163.0 287.3 L161.0 288.8 L156.2 290.0 L150.0 290.7 L148.0 290.0 L145.0 286.9 L143.0 282.0 L140.0 280.4 L135.0 282.1 L134.0 284.0 L134.7 288.0 L134.0 288.4 L126.0 288.3 L116.0 289.7 L114.1 289.0 L117.0 287.6 L127.2 279.0 L134.0 276.2 L143.0 274.0"/>
+<path pathLength="1" data-len="112" d="M257.0 300.0 L260.0 300.3 L265.0 304.1 L272.0 306.9 L283.0 309.0 L286.0 310.4 L292.0 309.2 L294.3 305.0 L299.0 301.9 L301.0 302.3 L299.8 306.0 L298.5 308.0 L299.3 312.0 L298.0 314.4 L292.0 315.5 L283.0 314.7 L263.0 308.3 L255.9 303.0 L255.7 301.0 L257.0 300.0"/>
+<path pathLength="1" data-len="182" d="M263.5 283.0 L282.0 282.1 L292.0 284.1 L299.0 286.5 L304.0 289.5 L316.8 301.0 L317.1 302.0 L312.0 302.6 L306.0 299.8 L302.0 299.2 L301.0 298.4 L299.0 292.9 L294.0 290.8 L291.0 291.1 L288.7 297.0 L286.0 301.1 L281.0 302.5 L274.0 301.2 L271.1 300.0 L269.2 298.0 L268.8 296.0 L269.9 288.0 L268.0 286.0 L262.0 287.3 L260.0 288.9 L259.3 291.0 L260.4 295.0 L259.0 296.4 L249.7 294.0 L248.4 293.0 L250.0 288.6 L253.0 285.5 L255.0 284.3 L263.5 283.0"/>
+<path pathLength="1" data-len="144" d="M294.1 241.0 L297.0 241.1 L299.0 243.0 L300.1 247.0 L298.9 249.0 L279.0 254.5 L269.0 260.1 L268.0 260.0 L267.0 258.0 L263.0 257.4 L252.0 260.3 L246.0 266.0 L241.0 269.9 L240.7 266.0 L245.0 257.0 L249.0 253.2 L272.0 245.1 L284.0 243.4 L294.1 241.0"/>
+<path pathLength="1" data-len="161" d="M142.1 227.0 L148.0 226.1 L149.5 227.0 L151.0 229.8 L156.0 231.1 L166.0 231.8 L179.2 236.0 L185.9 242.0 L188.1 247.0 L187.0 249.6 L185.0 249.5 L168.8 241.0 L166.0 239.4 L163.0 238.8 L159.0 240.4 L155.0 240.2 L151.0 238.9 L147.0 236.1 L143.1 235.0 L141.0 233.5 L135.0 234.9 L118.0 233.7 L117.1 233.0 L117.8 230.0 L121.0 227.5 L133.0 228.3 L142.1 227.0"/>
+<path pathLength="1" data-len="55" d="M289.8 273.0 L296.0 273.9 L301.5 276.0 L308.3 281.0 L312.4 286.0 L311.0 286.7 L310.0 286.2 L304.0 279.4 L298.0 276.6 L291.6 275.0 L289.8 274.0 L289.8 273.0"/>
+<path pathLength="1" data-len="264" d="M149.0 428.0 L156.0 427.1 L164.0 427.4 L173.3 431.0 L193.2 437.0 L200.0 437.5 L207.0 439.2 L215.0 438.7 L226.0 439.9 L241.0 437.7 L256.0 437.0 L269.7 441.0 L271.0 443.0 L270.4 444.0 L264.0 444.9 L254.0 442.9 L239.0 445.8 L221.0 446.2 L210.0 445.7 L205.0 444.5 L186.0 442.5 L161.0 433.0 L144.0 433.2 L143.8 432.0 L145.2 430.0 L149.0 428.0"/>
+<path pathLength="1" data-len="228" d="M89.4 232.0 L91.0 231.5 L92.0 233.1 L92.5 236.0 L92.0 239.8 L93.0 240.2 L95.0 238.1 L95.6 241.0 L92.5 246.0 L92.3 252.0 L88.8 261.0 L86.2 276.0 L83.1 285.0 L81.4 297.0 L80.1 333.0 L79.4 337.0 L78.0 338.4 L77.0 337.4 L75.2 332.0 L74.4 325.0 L75.8 317.0 L74.1 296.0 L78.0 282.0 L76.9 276.0 L79.1 273.0 L81.0 268.3 L83.4 257.0 L88.4 241.0 L88.0 237.0 L89.4 232.0"/>
+<path pathLength="1" data-len="72" d="M300.5 237.0 L303.0 236.3 L306.0 236.8 L315.2 242.0 L317.2 245.0 L317.2 248.0 L321.2 251.0 L324.1 255.0 L324.2 257.0 L322.9 257.0 L314.0 255.2 L312.7 253.0 L314.3 250.0 L313.5 248.0 L310.1 245.0 L306.0 243.6 L300.3 240.0 L299.8 238.0 L300.5 237.0"/>
+<path pathLength="1" data-len="51" d="M70.4 361.0 L72.0 360.2 L74.7 361.0 L76.0 362.1 L76.6 364.0 L74.6 369.0 L75.4 373.0 L74.0 376.0 L74.0 379.0 L72.0 380.9 L71.0 380.8 L70.6 379.0 L73.0 376.0 L73.4 369.0 L69.0 366.0 L70.4 361.0"/>
+<path pathLength="1" data-len="597" d="M339.9 228.0 L340.0 227.2 L341.0 228.8 L342.5 235.0 L342.5 244.0 L343.9 250.0 L344.3 260.0 L342.7 265.0 L345.4 275.0 L344.8 289.0 L348.2 294.0 L347.3 298.0 L348.1 302.0 L352.1 305.0 L351.6 307.0 L348.0 309.4 L346.9 311.0 L347.3 314.0 L350.3 317.0 L350.0 318.8 L347.0 319.6 L346.3 321.0 L346.6 324.0 L348.0 326.0 L353.0 326.8 L357.4 320.0 L360.0 318.8 L364.0 318.5 L370.4 316.0 L370.7 315.0 L366.6 311.0 L367.0 309.0 L368.0 308.2 L370.3 311.0 L372.0 311.6 L377.0 309.8 L379.6 308.0 L381.0 304.8 L388.4 298.0 L388.0 295.5 L385.0 293.9 L378.0 297.4 L377.0 297.4 L375.9 296.0 L377.6 292.0 L380.0 290.5 L381.5 288.0 L385.0 286.3 L386.5 284.0 L388.0 279.0 L386.6 275.0 L384.0 273.4 L379.0 272.6 L372.0 272.2 L369.0 273.5 L369.0 271.9 L373.0 270.4 L378.0 266.2 L381.0 266.0 L385.0 263.9 L386.0 265.0 L384.4 268.0 L385.0 269.5 L390.0 270.6 L392.0 272.2 L395.0 271.6 L396.5 276.0 L398.0 277.7 L403.0 275.1 L404.0 275.5 L404.9 278.0 L403.0 280.2 L398.7 283.0 L394.3 289.0 L395.1 292.0 L393.0 292.6 L391.7 294.0 L391.9 295.0 L393.0 295.5 L399.0 294.3 L400.8 296.0 L400.8 297.0 L399.5 299.0 L393.6 304.0 L389.0 311.7 L385.0 311.9 L382.0 315.1 L380.0 319.1 L378.0 320.7 L371.0 324.1 L366.0 325.0 L361.3 331.0 L356.0 333.3 L352.0 333.6 L351.0 334.7 L348.7 339.0 L352.0 339.7 L352.5 347.0 L351.0 350.3 L344.4 356.0 L344.4 365.0 L342.3 371.0 L342.0 375.5 L340.0 377.2 L339.0 374.9 L335.5 373.0 L334.8 370.0 L336.6 363.0 L337.4 341.0 L339.5 330.0 L341.0 315.0 L339.7 306.0 L341.1 299.0 L338.6 288.0 L337.9 267.0 L338.8 263.0 L336.6 257.0 L339.0 253.0 L339.9 244.0 L335.8 236.0 L339.9 228.0"/>
+<path pathLength="1" data-len="341" d="M38.9 258.0 L41.2 259.0 L42.5 263.0 L41.0 264.9 L34.8 268.0 L33.3 270.0 L31.8 274.0 L30.3 283.0 L31.1 287.0 L34.0 292.4 L38.0 288.0 L40.0 284.0 L41.0 283.4 L41.8 284.0 L38.5 293.0 L40.1 301.0 L42.5 306.0 L44.0 307.3 L46.0 307.5 L48.0 310.3 L50.0 310.8 L54.0 309.4 L57.0 306.8 L57.6 307.0 L55.7 310.0 L55.2 313.0 L58.0 315.6 L61.6 316.0 L59.0 318.8 L56.0 317.2 L54.0 317.0 L49.8 319.0 L49.2 321.0 L50.0 323.7 L54.1 329.0 L49.8 333.0 L51.0 334.3 L53.0 334.5 L59.0 333.3 L61.6 332.0 L64.3 328.0 L67.0 321.0 L67.3 318.0 L66.0 315.4 L63.2 314.0 L64.0 310.9 L68.0 312.7 L69.2 314.0 L69.3 321.0 L70.7 327.0 L70.1 333.0 L69.0 335.0 L61.0 339.6 L52.0 341.8 L48.0 340.4 L45.7 338.0 L45.0 335.0 L45.7 333.0 L47.9 331.0 L48.2 329.0 L43.4 319.0 L40.0 314.2 L35.0 311.2 L30.0 306.0 L27.4 302.0 L25.7 297.0 L22.5 293.0 L21.7 289.0 L22.1 284.0 L21.2 281.0 L22.2 279.0 L26.2 276.0 L25.4 274.0 L23.0 272.8 L21.6 271.0 L21.4 268.0 L22.3 265.0 L25.0 262.5 L30.0 263.7 L33.0 263.5 L38.9 258.0"/>
+<path pathLength="1" data-len="165" d="M307.7 161.0 L309.0 160.5 L315.8 163.0 L325.6 175.0 L327.5 181.0 L331.1 184.0 L332.8 192.0 L335.0 195.0 L338.6 203.0 L338.9 206.0 L337.6 210.0 L339.6 214.0 L339.4 220.0 L341.8 224.0 L341.0 226.8 L340.0 226.9 L339.0 224.0 L338.0 221.6 L332.0 220.8 L330.1 219.0 L330.1 217.0 L335.2 213.0 L335.9 210.0 L328.5 198.0 L317.4 173.0 L312.0 166.6 L308.0 163.6 L307.7 161.0"/>
+<path pathLength="1" data-len="49" d="M378.1 192.0 L380.0 191.2 L381.0 191.6 L381.7 194.0 L381.2 196.0 L376.0 200.2 L371.0 201.1 L366.0 204.1 L364.4 204.0 L363.5 203.0 L362.9 201.0 L363.6 200.0 L367.0 197.9 L369.8 195.0 L375.0 194.2 L378.1 192.0"/>
+<path pathLength="1" data-len="68" d="M390.0 216.0 L386.6 218.0 L387.1 224.0 L385.4 226.0 L385.1 228.0 L388.1 239.0 L389.0 239.8 L391.0 239.8 L393.6 236.0 L395.0 234.5 L399.0 233.4 L400.8 232.0 L403.9 226.0 L399.0 217.4 L395.0 217.6 L392.0 216.1 L390.0 216.0"/>
+<path pathLength="1" data-len="53" d="M49.0 169.8 L44.6 175.0 L41.7 182.0 L41.1 190.0 L42.0 191.2 L44.0 189.6 L48.0 185.0 L53.7 181.0 L53.8 179.0 L51.0 170.5 L49.0 169.8"/>
+<path pathLength="1" data-len="551" d="M58.7 102.0 L60.0 101.7 L62.0 104.1 L65.5 106.0 L62.0 111.4 L61.6 114.0 L63.0 118.8 L65.2 121.0 L65.1 124.0 L62.0 132.4 L48.0 138.6 L46.7 140.0 L45.9 143.0 L53.7 148.0 L56.5 157.0 L56.0 161.8 L60.0 163.0 L60.8 164.0 L59.6 168.0 L57.4 171.0 L56.9 173.0 L59.3 181.0 L58.0 183.8 L55.0 185.0 L51.9 189.0 L48.3 199.0 L50.0 201.9 L55.0 202.0 L57.1 204.0 L56.2 206.0 L55.0 206.7 L49.0 206.0 L46.0 203.4 L44.0 199.6 L42.0 198.6 L39.0 199.6 L37.0 201.4 L33.8 202.0 L32.5 204.0 L33.0 205.1 L34.0 205.3 L37.0 203.9 L39.5 207.0 L39.4 211.0 L37.4 216.0 L39.4 221.0 L42.0 223.6 L44.0 224.3 L46.0 223.9 L48.3 221.0 L53.0 217.4 L55.0 216.8 L55.8 217.0 L56.0 218.0 L54.0 220.9 L49.3 224.0 L46.0 227.9 L41.0 228.9 L39.0 227.8 L33.5 222.0 L33.9 215.0 L32.0 208.5 L30.0 207.7 L27.0 209.0 L25.6 212.0 L26.3 215.0 L27.0 219.1 L26.0 219.8 L23.0 219.2 L21.4 221.0 L24.3 229.0 L25.0 233.9 L27.0 238.0 L29.0 238.4 L29.2 236.0 L30.0 234.9 L31.0 235.4 L37.8 242.0 L45.0 246.1 L46.1 248.0 L44.7 249.0 L41.0 248.8 L36.0 246.4 L28.0 245.0 L23.0 246.4 L20.0 245.6 L18.5 243.0 L18.4 236.0 L13.9 226.0 L13.1 222.0 L16.0 215.3 L18.7 213.0 L23.2 211.0 L24.2 207.0 L24.1 202.0 L25.0 200.0 L28.0 197.8 L37.0 194.7 L39.6 192.0 L37.3 187.0 L36.2 181.0 L32.3 179.0 L26.7 174.0 L25.6 172.0 L23.7 157.0 L24.2 145.0 L31.0 136.9 L32.6 133.0 L34.0 131.8 L38.0 130.4 L44.0 130.3 L46.0 127.2 L48.0 126.5 L49.4 127.0 L49.9 130.0 L51.0 130.4 L58.7 125.0 L59.5 122.0 L55.4 118.0 L54.2 109.0 L55.0 105.0 L58.7 102.0"/>
+<path pathLength="1" data-len="595" d="M385.7 112.0 L388.0 111.3 L392.0 114.8 L395.7 116.0 L400.3 120.0 L403.3 124.0 L404.3 127.0 L403.7 139.0 L403.0 141.2 L401.0 142.6 L390.0 142.2 L389.0 142.5 L387.6 145.0 L390.0 150.0 L389.5 154.0 L390.5 156.0 L392.0 156.7 L396.0 154.2 L399.5 158.0 L399.5 159.0 L394.2 164.0 L393.0 168.3 L398.0 170.1 L405.0 168.6 L407.0 168.9 L407.7 170.0 L407.1 174.0 L405.0 176.4 L403.0 176.9 L396.0 175.5 L394.0 176.2 L393.2 178.0 L394.6 181.0 L400.0 187.0 L398.4 192.0 L402.1 200.0 L401.0 209.5 L398.8 212.0 L398.8 214.0 L400.1 216.0 L406.6 220.0 L410.1 232.0 L410.4 237.0 L409.5 242.0 L407.6 248.0 L405.2 252.0 L402.0 254.5 L400.3 254.0 L404.5 246.0 L406.1 239.0 L406.7 232.0 L406.1 229.0 L405.0 228.1 L395.8 249.0 L396.6 253.0 L399.0 255.0 L397.2 258.0 L397.7 263.0 L401.0 267.0 L404.0 267.2 L406.0 268.9 L406.3 270.0 L405.1 272.0 L403.0 272.9 L398.9 271.0 L397.0 268.9 L391.0 267.5 L392.5 263.0 L391.7 260.0 L390.0 258.4 L387.0 258.6 L386.5 258.0 L388.8 253.0 L387.3 250.0 L387.2 246.0 L385.5 241.0 L382.5 236.0 L381.0 231.1 L377.3 229.0 L374.2 224.0 L379.0 222.8 L382.0 221.1 L383.3 220.0 L383.7 218.0 L382.2 217.0 L378.0 216.6 L372.0 219.2 L360.0 217.4 L357.8 215.0 L358.8 213.0 L360.0 212.6 L366.0 213.0 L370.0 216.0 L372.0 215.6 L374.0 213.7 L377.0 213.4 L382.0 208.0 L383.0 203.0 L386.0 198.2 L390.0 196.5 L388.0 184.0 L389.7 180.0 L389.9 177.0 L389.0 176.2 L386.4 176.0 L385.4 175.0 L386.7 171.0 L382.8 163.0 L386.3 158.0 L386.5 154.0 L383.2 147.0 L378.5 143.0 L379.0 139.6 L374.0 135.0 L372.8 132.0 L375.0 131.1 L378.0 131.9 L382.4 136.0 L385.0 139.7 L389.0 140.8 L400.0 136.1 L401.6 133.0 L400.0 128.0 L397.8 125.0 L395.5 119.0 L386.0 116.2 L385.2 114.0 L385.7 112.0"/>
+<path pathLength="1" data-len="63" d="M44.0 152.8 L42.0 153.3 L35.0 159.0 L32.6 166.0 L34.7 175.0 L37.0 176.9 L39.0 176.1 L48.9 163.0 L50.3 160.0 L49.8 158.0 L46.7 154.0 L44.0 152.8"/>
+<path pathLength="1" data-len="48" d="M337.5 111.0 L340.0 110.9 L341.7 112.0 L341.9 114.0 L341.0 115.4 L340.0 115.9 L336.0 113.8 L326.0 117.3 L323.0 118.6 L322.0 118.4 L323.0 115.0 L325.0 113.1 L327.0 112.1 L330.0 112.3 L337.5 111.0"/>
+<path pathLength="1" data-len="67" d="M31.0 141.0 L27.4 144.0 L26.6 147.0 L27.0 150.9 L28.9 153.0 L29.1 159.0 L30.0 159.8 L33.2 158.0 L36.5 154.0 L39.0 152.4 L41.4 149.0 L41.8 145.0 L39.0 143.7 L36.0 144.3 L34.3 146.0 L32.0 150.6 L31.0 150.4 L32.3 142.0 L31.0 141.0"/>
+<path pathLength="1" data-len="625" d="M338.4 51.0 L344.0 50.7 L347.0 52.6 L349.7 56.0 L353.6 64.0 L355.0 72.0 L352.1 80.0 L353.3 86.0 L354.8 88.0 L357.0 90.0 L358.0 89.4 L359.2 82.0 L360.0 80.7 L363.0 83.0 L362.0 88.8 L360.0 91.5 L358.0 91.1 L355.9 97.0 L357.0 97.8 L360.0 94.1 L364.5 99.0 L366.4 103.0 L363.5 110.0 L357.6 116.0 L358.5 120.0 L354.8 130.0 L356.2 132.0 L359.0 133.1 L361.0 133.1 L363.4 132.0 L367.6 123.0 L368.0 119.5 L369.0 118.2 L370.5 118.0 L369.5 124.0 L364.2 134.0 L363.9 138.0 L365.0 139.6 L369.1 142.0 L369.8 144.0 L369.7 148.0 L371.0 150.7 L377.0 152.9 L378.2 154.0 L379.2 156.0 L379.2 160.0 L380.8 163.0 L378.0 164.8 L375.0 163.2 L373.6 159.0 L368.7 155.0 L362.8 146.0 L360.2 144.0 L357.5 136.0 L354.0 134.4 L351.0 135.3 L349.0 137.0 L347.8 139.0 L348.1 140.0 L351.0 143.5 L354.0 144.0 L357.4 146.0 L356.0 152.4 L357.0 153.4 L362.6 155.0 L363.5 157.0 L357.0 157.7 L352.0 160.4 L346.0 162.3 L341.0 163.6 L340.1 162.0 L340.5 160.0 L341.3 159.0 L348.0 156.4 L353.0 149.0 L353.3 146.0 L352.0 144.6 L349.0 144.0 L342.0 146.6 L335.4 144.0 L334.8 143.0 L336.5 141.0 L343.0 137.5 L351.3 129.0 L351.4 127.0 L349.0 126.1 L346.0 126.6 L340.3 129.0 L338.0 131.1 L335.7 130.0 L337.0 126.0 L340.0 122.1 L343.0 122.7 L346.0 124.8 L348.0 124.2 L350.4 121.0 L350.9 115.0 L355.3 107.0 L354.6 105.0 L351.4 101.0 L353.3 95.0 L352.2 86.0 L350.0 84.9 L347.0 85.9 L346.0 85.6 L345.1 82.0 L344.0 80.7 L342.0 80.3 L340.0 82.2 L339.0 82.2 L338.4 78.0 L336.0 76.7 L330.0 75.6 L326.0 76.6 L324.0 81.4 L316.0 80.4 L311.0 82.5 L306.0 86.2 L302.3 84.0 L303.0 82.0 L310.0 74.5 L311.0 73.9 L313.0 75.7 L315.0 75.5 L321.0 73.2 L324.0 69.8 L326.0 71.0 L330.0 71.4 L334.0 70.3 L342.0 73.1 L346.0 76.1 L349.0 75.7 L349.8 73.0 L347.5 68.0 L348.9 64.0 L347.6 60.0 L341.0 55.5 L331.7 53.0 L331.4 52.0 L333.0 51.1 L338.4 51.0"/>
+<path pathLength="1" data-len="80" d="M310.3 90.0 L313.0 89.4 L320.0 90.6 L325.0 89.1 L329.0 89.6 L331.1 93.0 L334.0 95.8 L339.0 96.9 L343.0 96.6 L346.1 99.0 L345.3 100.0 L343.0 100.5 L318.0 95.9 L312.0 93.0 L310.2 91.0 L310.3 90.0"/>
+<path pathLength="1" data-len="748" d="M210.1 13.0 L212.0 12.4 L212.6 13.0 L211.8 18.0 L212.8 20.0 L210.0 21.4 L206.0 20.9 L204.0 22.7 L202.8 31.0 L197.7 35.0 L198.2 39.0 L201.2 42.0 L202.2 45.0 L206.0 50.7 L207.0 51.2 L210.0 50.3 L213.0 51.1 L215.0 50.5 L220.0 52.8 L222.3 51.0 L223.0 42.2 L225.0 44.9 L228.0 45.0 L229.0 46.0 L229.6 50.0 L231.0 52.0 L233.0 53.6 L236.0 54.2 L237.9 57.0 L241.0 59.5 L244.0 67.5 L243.0 67.9 L240.0 67.2 L231.2 60.0 L229.0 57.2 L225.0 56.2 L220.0 53.3 L218.0 55.0 L215.0 54.3 L213.2 56.0 L211.2 56.0 L205.4 54.0 L201.9 50.0 L197.0 46.6 L195.0 46.7 L192.0 48.9 L191.0 48.4 L189.8 47.0 L193.3 43.0 L192.7 40.0 L190.7 38.0 L184.0 36.4 L181.0 37.9 L176.1 42.0 L175.0 44.0 L175.2 47.0 L177.6 52.0 L180.0 54.8 L182.0 55.9 L186.5 56.0 L184.6 59.0 L184.8 62.0 L191.0 68.9 L192.8 73.0 L190.0 73.3 L187.2 72.0 L183.5 68.0 L179.3 65.0 L177.0 62.0 L174.0 61.0 L174.3 55.0 L173.4 53.0 L170.0 50.1 L167.0 51.3 L164.0 46.8 L162.0 46.3 L159.0 48.3 L157.2 51.0 L157.3 54.0 L159.6 58.0 L156.5 63.0 L151.0 67.7 L146.0 70.2 L141.0 71.4 L138.8 73.0 L137.6 76.0 L139.4 79.0 L121.0 83.0 L115.6 87.0 L113.0 88.6 L105.0 88.7 L100.0 91.9 L94.0 93.5 L87.0 94.2 L83.8 97.0 L78.5 99.0 L77.0 102.0 L78.2 105.0 L78.0 106.2 L77.0 106.7 L74.0 105.7 L72.5 107.0 L72.0 108.9 L70.8 108.0 L70.0 102.2 L67.0 103.3 L66.0 98.5 L62.8 98.0 L69.0 90.1 L71.0 88.7 L85.0 85.0 L104.0 83.7 L109.0 81.9 L112.0 77.9 L116.0 78.4 L122.0 76.2 L126.0 76.6 L130.0 75.5 L132.4 73.0 L132.2 70.0 L132.9 69.0 L140.0 67.3 L148.0 59.9 L151.7 58.0 L152.5 56.0 L151.0 50.0 L142.0 44.0 L139.0 44.2 L137.0 43.1 L135.4 41.0 L136.2 39.0 L135.0 37.6 L133.0 38.3 L131.2 41.0 L127.0 42.2 L121.0 46.3 L117.0 51.7 L114.2 54.0 L114.0 56.4 L113.0 57.8 L110.7 57.0 L109.8 56.0 L112.0 50.0 L120.0 40.2 L122.1 39.0 L122.0 37.0 L124.0 34.5 L131.0 33.4 L139.0 34.6 L147.0 39.8 L152.5 46.0 L154.0 46.4 L160.0 39.7 L164.0 37.3 L172.0 38.5 L176.0 34.5 L179.0 32.8 L193.0 30.4 L196.0 23.7 L198.1 21.0 L202.0 17.5 L210.1 13.0"/>
+<path pathLength="1" data-len="42" d="M134.8 52.0 L141.0 52.4 L142.0 53.2 L133.0 55.9 L129.0 56.1 L122.9 58.0 L123.5 56.0 L126.0 53.6 L134.8 52.0"/>
+<path pathLength="1" data-len="348" d="M272.7 39.0 L289.0 38.4 L290.9 41.0 L290.0 41.6 L287.0 42.5 L280.0 41.9 L278.6 43.0 L278.9 44.0 L296.0 55.7 L299.0 55.7 L301.0 54.5 L303.3 45.0 L306.0 42.8 L307.2 45.0 L304.0 49.0 L303.9 51.0 L305.0 51.9 L309.0 50.1 L313.0 52.2 L317.0 52.3 L336.0 64.4 L336.2 66.0 L334.0 67.2 L330.0 65.9 L325.0 62.1 L322.0 62.2 L318.4 59.0 L317.2 57.0 L316.0 56.6 L314.4 58.0 L314.1 60.0 L315.0 62.0 L314.0 63.3 L313.7 61.0 L312.0 60.5 L309.4 63.0 L308.0 67.6 L302.0 67.4 L299.2 69.0 L296.0 71.7 L292.3 69.0 L292.0 68.0 L292.8 67.0 L296.0 64.9 L298.0 62.0 L297.1 60.0 L294.0 58.1 L289.9 58.0 L281.0 60.1 L276.0 56.8 L267.0 57.8 L265.0 56.0 L262.0 55.2 L259.2 56.0 L257.0 58.5 L254.0 59.1 L251.0 64.8 L250.0 65.6 L248.6 65.0 L248.3 61.0 L253.8 52.0 L257.0 42.5 L258.0 42.1 L261.3 43.0 L259.8 49.0 L261.0 51.3 L270.0 51.0 L278.0 53.6 L281.0 53.4 L283.0 52.1 L283.2 50.0 L281.0 47.8 L272.0 45.1 L267.0 45.5 L262.8 43.0 L264.0 41.8 L272.7 39.0"/>
+<path pathLength="1" data-len="50" d="M218.4 26.0 L220.0 25.8 L222.0 27.0 L223.0 33.3 L220.0 36.7 L217.2 37.0 L215.0 40.4 L212.0 39.2 L206.5 38.0 L205.6 34.0 L215.0 27.5 L218.4 26.0"/>
+<path pathLength="1" data-len="95" d="M231.3 16.0 L235.0 15.9 L245.0 19.6 L247.3 23.0 L252.0 27.1 L257.4 36.0 L257.2 40.0 L256.0 40.8 L253.2 39.0 L251.7 35.0 L245.0 28.2 L242.0 26.7 L239.0 22.3 L237.0 22.0 L228.0 23.1 L225.0 24.4 L223.4 24.0 L223.1 22.0 L224.0 20.5 L231.3 16.0"/>
+</svg>
+        <figcaption class="sketch-foot">
+          <span>self-portrait, drawn by edge detection</span>
+          <button class="replay" id="replay">↺ redraw</button>
+        </figcaption>
+      </figure>
+    </div>
+
+    <h2 class="section-title">News</h2>
+    <ul class="news">
+      <li><time>Sep 2026</time><span>Both manuscripts, <b>DOODL</b> and <b>MTL-CMO</b>, submitted to the ICLR 2027 main conference track.</span></li>
+      <li><time>Aug 2026</time><span>End of my six-month research internship at CMAP, École Polytechnique.</span></li>
+      <li><time>May 2026</time><span>Preprint on arXiv: <a href="https://arxiv.org/abs/2605.18276">Geometric Dictionary Learning of Dynamical Systems with Optimal Transport</a> (DOODL).</span></li>
+      <li><time>Mar 2026</time><span>Started a research internship at CMAP with R. Flamary, K. Lounici and T. Germain.</span></li>
+      <li><time>2026</time><span>Ranked 36th out of 1,447 participants (top 2.5%) in the QRT Data Challenge.</span></li>
+      <li><time>Aug 2025</time><span>Joined Crédit Agricole CIB as a quantitative research intern (front office).</span></li>
+      <li><time>2025</time><span>Started coaching the Algerian national AI-olympiad team (AOAI).</span></li>
+    </ul>
+  </section>
+
+  <!-- ================= PUBLICATIONS ================= -->
+  <section class="view" id="publications">
+    <div class="page-head">
+      <h1>Publications</h1>
+      <p>Preprints and submissions. Names in bold are me.</p>
+    </div>
+
+    <article class="card pub">
+      <div class="pub-tag">DOODL</div>
+      <div>
+        <h3>Geometric Dictionary Learning of Dynamical Systems with Optimal Transport</h3>
+        <p class="authors">T. Germain, <b>S. Chemlal</b>, R. Flamary, V. R. Kostic, K. Lounici</p>
+        <p class="venue"><em>arXiv:2605.18276, 2026</em> · <strong>Submitted to ICLR 2027</strong></p>
+        <p class="summary">Related dynamical systems lie near a low-dimensional manifold in spectral operator space. DOODL learns a dictionary of characteristic spectral dynamics with Riemannian optimization and optimal transport, and estimates a new system from short trajectories. In low-data regimes it gives one to two orders of magnitude lower operator-estimation error than estimating each system independently.</p>
+        <div class="links">
+          <a class="btn" href="https://arxiv.org/abs/2605.18276"><svg><use href="#i-doc"/></svg>arXiv</a>
+          <a class="btn" href="https://arxiv.org/pdf/2605.18276"><svg><use href="#i-down"/></svg>PDF</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub">
+      <div class="pub-tag">MTL-CMO</div>
+      <div>
+        <h3>Multi-Task Learning of Conditional Mean Operators: Applications to Dynamical Systems and Uncertainty Quantification</h3>
+        <p class="authors"><b>S. Chemlal</b>, T. Germain, R. Flamary, V. R. Kostic, K. Lounici</p>
+        <p class="venue"><em>Preprint forthcoming</em> · <strong>Submitted to ICLR 2027</strong></p>
+        <p class="summary">A multi-task operator-learning framework for populations of conditional distributions. It learns a representation shared across related tasks and transfers in closed form to a new distribution from limited data, with statistical guarantees. Applications include metastable Langevin dynamics and turbulent plasma simulations.</p>
+        <div class="links">
+          <!-- Replace TODO with the arXiv URL once it is out, e.g. https://arxiv.org/abs/XXXX.XXXXX -->
+          <a class="btn" href="TODO" data-soon="arXiv: coming soon"><svg><use href="#i-doc"/></svg>arXiv</a>
+        </div>
+      </div>
+    </article>
+
+    <h2 class="section-title">Related research to understand my papers</h2>
+    <p style="color:var(--muted);margin-top:-4px">Two papers by my co-authors that my work builds on directly.</p>
+
+    <article class="card pub related">
+      <div class="pub-tag">NCP</div>
+      <div>
+        <h3>Neural Conditional Probability for Uncertainty Quantification</h3>
+        <p class="authors">V. R. Kostic, K. Lounici, G. Pacreau, G. Turri, P. Novelli, M. Pontil</p>
+        <p class="venue"><em>NeurIPS 2024</em></p>
+        <p class="why"><b>Read it for MTL-CMO.</b> NCP learns conditional distributions through the conditional expectation operator: after a single training phase, it gives conditional means, quantiles and confidence regions for any conditioning. MTL-CMO extends this operator view to many related tasks at once.</p>
+        <div class="links">
+          <a class="btn" href="https://arxiv.org/abs/2407.01171"><svg><use href="#i-doc"/></svg>arXiv</a>
+          <a class="btn" href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/705b97ecb07ae86524d438abac97a3e2-Abstract-Conference.html"><svg><use href="#i-doc"/></svg>NeurIPS</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub related">
+      <div class="pub-tag">S-GOT</div>
+      <div>
+        <h3>A Spectral-Grassmann Wasserstein Metric for Operator Representations of Dynamical Systems</h3>
+        <p class="authors">T. Germain, R. Flamary, V. R. Kostic, K. Lounici</p>
+        <p class="venue"><em>arXiv:2509.24920, 2025</em></p>
+        <p class="why"><b>Read it for DOODL.</b> It represents each dynamical system as a distribution over its Koopman/transfer-operator eigenvalues and spectral projectors, and compares systems with optimal transport. This is the geometry in which DOODL learns its dictionary.</p>
+        <div class="links">
+          <a class="btn" href="https://arxiv.org/abs/2509.24920"><svg><use href="#i-doc"/></svg>arXiv</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ================= COURSES ================= -->
+  <section class="view" id="courses">
+    <div class="page-head">
+      <h1>Courses</h1>
+      <p>I teach machine learning as a volunteer coach for AOAI, the Algerian national selection for the International Olympiad in Artificial Intelligence (IOAI). Here are some of the courses I wrote. Each one rebuilds a core idea from first principles and ends with a hands-on challenge. I add new ones regularly.</p>
+    </div>
+
+    <div class="courses">
+      <article class="card course">
+        <div class="num">01</div>
+        <h3>Courses on Probability and Optimization</h3>
+        <p>The two views of learning: empirical risk minimization and maximum likelihood.</p>
+        <ul>
+          <li>Markov, Chebyshev, law of large numbers</li>
+          <li>Cauchy–Schwarz, gradient descent and its convergence</li>
+          <li>GD vs SGD</li>
+          <li>MLE; challenge: Gaussian-mixture clustering</li>
+        </ul>
+        <div class="links"><a class="btn primary" href="assets/docs/courses/probability-optimization.pdf"><svg><use href="#i-down"/></svg>PDF</a></div>
+      </article>
+
+      <article class="card course">
+        <div class="num">02</div>
+        <h3>Linear Regression for ML</h3>
+        <p>Covariance, linear regression and regularization, from geometry to real data.</p>
+        <ul>
+          <li>Correlation as a cosine</li>
+          <li>Least squares, multivariate regression</li>
+          <li>Bias–variance tradeoff</li>
+          <li>Ridge &amp; Lasso, Bayesian view; challenge: house prices</li>
+        </ul>
+        <div class="links"><a class="btn primary" href="assets/docs/courses/linear-regression.pdf"><svg><use href="#i-down"/></svg>PDF</a></div>
+      </article>
+
+      <article class="card course">
+        <div class="num">03</div>
+        <h3>Transformers</h3>
+        <p>From attention to modern language models, rebuilt from simple mathematical principles.</p>
+        <ul>
+          <li>Embeddings, positional information</li>
+          <li>Self-attention and the 1/√d<sub>k</sub> factor</li>
+          <li>Multi-head attention, FFN, residuals</li>
+          <li>Causal masking, next-token MLE, KV cache; challenge: NumPy attention layer</li>
+        </ul>
+        <div class="links"><a class="btn primary" href="assets/docs/courses/transformers.pdf"><svg><use href="#i-down"/></svg>PDF</a></div>
+      </article>
+
+      <!-- NEW COURSE: copy this block, put the PDF in assets/docs/courses/, fill in the title, lines and file name.
+      <article class="card course">
+        <div class="num">04</div>
+        <h3>Course title</h3>
+        <p>One-sentence description.</p>
+        <ul>
+          <li>Topic 1</li>
+          <li>Topic 2</li>
+        </ul>
+        <div class="links"><a class="btn primary" href="assets/docs/courses/FILE-NAME.pdf"><svg><use href="#i-down"/></svg>PDF</a></div>
+      </article>
+      -->
+    </div>
+  </section>
+
+  <!-- ================= CV ================= -->
+  <section class="view" id="cv">
+    <div class="page-head">
+      <h1>Curriculum Vitae</h1>
+    </div>
+    <div class="cv-actions">
+      <a class="btn primary" href="assets/docs/cv.pdf" download><svg><use href="#i-down"/></svg>Download CV (PDF)</a>
+      <a class="btn" href="mailto:sami-rayan.chemlal@student-cs.fr"><svg><use href="#i-mail"/></svg>sami-rayan.chemlal@student-cs.fr</a>
+    </div>
+
+    <h2 class="section-title">Education</h2>
+    <ul class="timeline">
+      <li><div class="when">2023 – 2027</div><div class="what">
+        <h3>CentraleSupélec: Diplôme d'Ingénieur (MSc-equivalent)</h3>
+        <p class="org">Applied Mathematics, Machine Learning &amp; Statistics (MDS-SDI) · GPA 3.92 / 4.00</p>
+        <ul><li>Modern deep learning, transformers, NLP, diffusion &amp; generative models, representation and transfer learning, reinforcement learning, statistical learning, optimization, optimal transport.</li></ul>
+      </div></li>
+      <li><div class="when">2020 – 2023</div><div class="what">
+        <h3>Lycée du Parc: CPGE MPSI–PSI*</h3>
+        <p class="org">GPA 4.00 / 4.00 · Ranked 4th in the CentraleSupélec international entrance examination</p>
+      </div></li>
+    </ul>
+
+    <h2 class="section-title">Research experience</h2>
+    <ul class="timeline">
+      <li><div class="when">Mar – Aug 2026</div><div class="what">
+        <h3>Research Intern: Scientific Machine Learning</h3>
+        <p class="org">CMAP, École Polytechnique, Palaiseau · Supervisors: R. Flamary, K. Lounici, T. Germain</p>
+        <ul>
+          <li>Developed <b>MTL-CMO</b>, a multi-task operator-learning framework for populations of conditional distributions, with closed-form transfer to new distributions from limited data and statistical guarantees.</li>
+          <li>Co-developed <b>DOODL</b>, a geometric dictionary-learning framework for populations of dynamical systems combining spectral operator representations, Riemannian optimization and optimal transport.</li>
+          <li>Applied both to uncertainty quantification and stochastic dynamics (metastable Langevin dynamics, turbulent plasma simulations): conditional statistics, system identification, parameter recovery and regime characterization.</li>
+          <li>One to two orders of magnitude lower operator-estimation error in low-data regimes; two manuscripts submitted to ICLR 2027.</li>
+        </ul>
+      </div></li>
+    </ul>
+
+    <h2 class="section-title">Research projects</h2>
+    <ul class="timeline">
+      <li><div class="when">2026</div><div class="what">
+        <h3>Predictive Corruption Geometry for Generative Modeling of Physical Fields</h3>
+        <p class="org">Independent research project · Generative modeling, spectral methods, PyTorch, GPU/SLURM</p>
+        <ul>
+          <li>Studied corruption geometry as an inductive bias for generative models of physical fields, via a mode-wise Fourier analysis of the denoising risk.</li>
+          <li>Derived analytical criteria predicting when PDE-induced and covariance-aligned corruptions are complementary, and built a dual-geometry representation from them.</li>
+          <li>Evaluated on Kolmogorov turbulence, decaying 2D turbulence and Cahn–Hilliard dynamics. The analytical selector matched the choice made by exhaustive validation and improved on a tuned spectral baseline.</li>
+        </ul>
+      </div></li>
+      <li><div class="when">2025</div><div class="what">
+        <h3>Robust Pattern Classification for Environmental Time Series</h3>
+        <p class="org">CentraleSupélec / L2S Laboratory · Deep learning, time series, robustness</p>
+        <ul>
+          <li>Built synthetic benchmarks with controlled morphology, noise, missing segments and scale shifts.</li>
+          <li>Compared ANN, CNN, LSTM and Transformer models under severe noise, partial observations and changes in pattern geometry.</li>
+          <li>Developed an online sliding-window pipeline to detect and classify motifs in continuous signals.</li>
+        </ul>
+      </div></li>
+      <li><div class="when">2026</div><div class="what">
+        <h3>QRT Data Challenge: Cross-Sectional Return Prediction</h3>
+        <p class="org">Machine learning for financial time series</p>
+        <ul><li>Momentum, volatility, liquidity and relative-value features; ensembles of tree-based models. <b>Ranked 36th out of 1,447 (top 2.5%).</b></li></ul>
+      </div></li>
+    </ul>
+
+    <h2 class="section-title">Industry experience</h2>
+    <ul class="timeline">
+      <li><div class="when">Aug 2025 – Feb 2026</div><div class="what">
+        <h3>Quantitative Research Intern: Front Office</h3>
+        <p class="org">Crédit Agricole CIB, Paris</p>
+        <ul>
+          <li>Statistical models for credit-event and default prediction (linear, logistic, regularized regression; calibration, out-of-sample validation).</li>
+          <li>Monte Carlo models of correlated defaults, with dependence through covariance structures and Cholesky factorization.</li>
+          <li>Repayment and prepayment distributions; KS, χ², t- and F-tests, heteroscedasticity, multicollinearity, weighted least squares.</li>
+        </ul>
+      </div></li>
+    </ul>
+
+    <h2 class="section-title">Teaching</h2>
+    <ul class="timeline">
+      <li><div class="when">2025 – present</div><div class="what">
+        <h3>AI Olympiad Coach (volunteer)</h3>
+        <p class="org">AOAI, Algerian national selection · Remote</p>
+        <ul><li>Probability, statistical learning, optimization and deep learning. <a href="#courses">See the courses →</a></li></ul>
+      </div></li>
+      <li><div class="when">2023 – present</div><div class="what">
+        <h3>Mathematics Tutor</h3>
+        <p class="org">CPGE &amp; undergraduate mathematics · Paris</p>
+        <ul><li>Real analysis, topology, measure and integration, differential calculus, linear algebra, reduction theory, Euclidean spaces. Students went on to CentraleSupélec, Télécom Paris and HEC Paris.</li></ul>
+      </div></li>
+    </ul>
+
+    <h2 class="section-title">Skills</h2>
+    <dl class="skills">
+      <dt>Mathematics</dt><dd>Probability, stochastic calculus, harmonic analysis, optimal transport, convex &amp; non-convex optimization, dynamical systems, operator learning</dd>
+      <dt>Machine learning</dt><dd>Scientific ML, transformers, diffusion &amp; flow models, representation learning, multitask &amp; transfer learning, reinforcement learning, NLP</dd>
+      <dt>Programming</dt><dd>Python, C#, R, MATLAB, SQL · PyTorch, JAX, TensorFlow, scikit-learn, pandas, NumPy, SciPy, POT · CUDA, SLURM, Git</dd>
+      <dt>Languages</dt><dd>French (C2), Kabyle (C2), English (C1)</dd>
+    </dl>
+  </section>
+
+  <!-- ================= LANDSCAPES ================= -->
+  <section class="view" id="landscapes">
+    <div class="page-head">
+      <h1>Landscapes from Kabylie</h1>
+      <p>Photos from Kabylie.</p>
+    </div>
+    <div class="gallery">
+      <figure class="card shot wide">
+        <img src="assets/img/bouira-road.jpg" alt="A street in Bouira with snow-capped mountains behind" loading="lazy">
+        <figcaption><b>Bouira road</b>The Djurdjura above the city</figcaption>
+      </figure>
+      <figure class="card shot half">
+        <img src="assets/img/forest-lake.jpg" alt="Aerial view of Lac Noir in the Akfadou forest" loading="lazy">
+        <figcaption><b>Lac Noir</b>Akfadou forest</figcaption>
+      </figure>
+      <figure class="card shot half">
+        <img src="assets/img/lake-bridge.jpg" alt="A bridge over the Taksebt dam lake between green hills" loading="lazy">
+        <figcaption><b>Taksebt dam</b>Ath Dwala</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <svg class="ridge" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="0,80 0,76.1 4,76.9 9,76.9 14,73.0 19,67.6 24,62.9 29,59.8 34,56.7 39,55.9 44,55.1 49,52.0 54,52.0 59,48.1 64,45.8 69,46.6 74,45.0 79,44.2 84,42.7 89,41.1 94,39.6 99,38.0 104,38.0 109,35.7 114,33.3 119,34.1 124,35.7 129,38.0 134,38.8 139,41.1 144,43.4 149,44.2 154,41.9 159,43.4 164,43.4 169,45.0 174,45.0 179,45.8 184,45.0 189,47.3 194,47.3 199,48.1 204,50.4 209,52.0 214,52.0 219,52.0 224,50.4 229,48.9 234,46.6 239,43.4 245,40.3 250,36.4 255,34.1 260,32.6 265,31.0 270,31.0 275,32.6 280,33.3 285,32.6 290,34.1 295,34.9 300,36.4 305,38.0 310,38.0 315,37.2 320,36.4 325,34.9 330,32.6 335,31.0 340,28.7 345,27.1 350,22.4 355,15.4 360,12.3 365,13.9 370,17.8 375,18.6 380,22.4 385,21.7 390,21.7 395,21.7 400,22.4 405,22.4 410,22.4 415,23.2 420,24.0 425,24.0 430,22.4 435,22.4 440,23.2 445,23.2 450,22.4 455,22.4 460,22.4 465,22.4 470,21.7 475,20.9 480,20.9 485,20.1 490,17.0 495,17.0 500,16.2 505,16.2 510,15.4 515,16.2 520,17.0 525,17.8 530,17.0 535,16.2 540,15.4 545,13.9 550,13.1 555,13.1 560,12.3 565,12.3 570,13.9 575,13.9 580,13.9 585,13.9 590,13.1 595,13.1 600,11.6 605,10.8 610,11.6 615,12.3 620,12.3 625,11.6 630,12.3 635,10.8 640,10.0 645,13.1 650,13.1 655,13.9 660,13.9 665,13.1 670,13.9 675,17.0 680,17.8 685,18.6 690,24.8 695,24.0 700,24.0 705,21.7 710,21.7 715,23.2 720,26.3 725,27.1 730,26.3 735,27.9 740,28.7 745,30.2 750,31.0 755,31.8 760,28.7 765,27.1 770,27.1 775,28.7 780,30.2 785,31.0 790,33.3 795,35.7 800,38.8 805,38.8 810,39.6 815,41.1 820,42.7 825,42.7 830,39.6 835,40.3 840,38.0 845,35.7 850,35.7 855,34.9 860,37.2 865,36.4 870,38.0 875,40.3 880,41.1 885,36.4 890,34.9 895,41.1 900,41.1 905,45.0 910,48.1 915,50.4 920,52.0 925,47.3 930,47.3 935,51.2 940,52.0 945,55.9 950,57.4 955,58.2 960,59.0 965,62.9 970,66.8 975,68.3 980,70.7 985,73.8 990,76.1 995,76.1 1000,76.9 1005,78.4 1010,77.7 1015,77.7 1020,76.9 1025,76.9 1030,76.1 1035,73.8 1040,72.2 1045,69.1 1050,70.7 1055,72.2 1060,75.3 1065,76.1 1070,76.1 1075,79.2 1080,80.0 1085,79.2 1090,77.7 1095,75.3 1100,74.6 1105,73.0 1110,69.9 1115,69.1 1120,69.1 1125,68.3 1130,66.0 1135,59.8 1140,59.8 1145,60.6 1150,60.6 1155,60.6 1160,60.6 1165,61.3 1170,60.6 1175,60.6 1180,59.8 1185,60.6 1190,59.8 1195,58.2 1200,56.7 1200,80"/>
+  </svg>
+  <div class="foot">
+    <div class="wrap">
+      <span>© 2026 Sami Chemlal · footer skyline traced from the Djurdjura photo</span>
+      <span><a href="mailto:samychemlal@yahoo.fr">samychemlal@yahoo.fr</a> · <a href="mailto:sami-rayan.chemlal@student-cs.fr">sami-rayan.chemlal@student-cs.fr</a> · <a href="https://github.com/samichemlal">GitHub</a> · <a href="https://www.linkedin.com/in/sami-rayan-chemlal-6b5881250/">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
