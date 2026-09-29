@@ -11,6 +11,7 @@
   --green: #3a7a2a;        /* El Esnam fields */
   --green-soft: #e7f2e1;
   --ridge: #d7e2ef;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
   --shadow: 0 1px 2px rgba(20, 30, 40, .06), 0 6px 24px rgba(20, 30, 40, .07);
   --radius: 14px;
   --serif: "Source Serif 4", Georgia, serif;
@@ -21,14 +22,14 @@
   :root:not([data-theme="light"]) {
     --bg: #0e1318; --bg-top: #122033; --surface: #151c23; --ink: #e6ebef; --muted: #98a4ae;
     --line: #25303a; --accent: #74aaff; --accent-soft: #17273d; --green: #8cc972; --green-soft: #1a2a17;
-    --ridge: #1a2634; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25);
+    --ridge: #1a2634; --s1: #3987e5; --s2: #d95926; --s3: #199e70; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0e1318; --bg-top: #122033; --surface: #151c23; --ink: #e6ebef; --muted: #98a4ae;
   --line: #25303a; --accent: #74aaff; --accent-soft: #17273d; --green: #8cc972; --green-soft: #1a2a17;
-  --ridge: #1a2634; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25);
+  --ridge: #1a2634; --s1: #3987e5; --s2: #d95926; --s3: #199e70; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25);
   color-scheme: dark;
 }
 
@@ -177,6 +178,36 @@ main { flex: 1; }
 .pub .links .btn { padding: 5px 12px; font-size: .83rem; }
 .why { font-size: .9rem; margin: 0 0 12px; padding: 8px 12px; border-left: 3px solid var(--green); background: var(--green-soft); border-radius: 0 8px 8px 0; }
 
+/* ---------- Publication animations ---------- */
+.viz { margin: 4px 0 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); padding: 12px 14px 10px; }
+.viz-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+.viz-title { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; }
+.viz-btn {
+  flex: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font: 500 .8rem var(--sans); padding: 4px 11px; border-radius: 999px; cursor: pointer;
+}
+.viz-btn:hover { border-color: var(--accent); color: var(--accent); }
+.viz-stage canvas { display: block; width: 100%; }
+.viz figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-top: 6px; }
+.viz-caption { font-size: .92rem; min-height: 1.6em; }
+.viz-caption.final { font-family: var(--serif); font-weight: 600; font-size: 1rem; }
+.viz-note { font-size: .74rem; color: var(--muted); }
+
+.plasma { padding: 22px 24px; margin-bottom: 16px; }
+.plasma h3 { font-size: 1.15rem; }
+.plasma-lead { font-size: .95rem; margin: 6px 0 16px; max-width: 760px; }
+.plasma-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.plasma-cell { margin: 0; }
+.plasma-cell canvas { display: block; width: 100%; aspect-ratio: 1; border-radius: 8px; background: var(--line); }
+.plasma-cell figcaption { font-size: .88rem; margin-top: 6px; text-align: center; }
+.plasma-cell figcaption span { display: inline-block; }
+.plasma-foot { display: flex; gap: 14px; align-items: center; margin-top: 14px; font-size: .8rem; color: var(--muted); }
+.cbar { flex: none; display: flex; align-items: center; gap: 6px; font-size: .8rem; color: var(--muted); }
+.cbar i {
+  display: block; width: 90px; height: 10px; border-radius: 3px;
+  background: linear-gradient(90deg, #053061, #2166ac, #4393c3, #92c5de, #d1e5f0, #f7f7f7, #fddbc7, #f4a582, #d6604d, #b2182b, #67001f);
+}
+
 /* ---------- Courses ---------- */
 .courses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .course { padding: 22px; display: flex; flex-direction: column; }
@@ -227,5 +258,10 @@ footer { margin-top: 40px; color: var(--muted); font-size: .88rem; }
   .portrait { width: 170px; }
   .pub { grid-template-columns: 1fr; padding: 18px; gap: 12px; }
   .pub-tag { height: auto; width: fit-content; padding: 6px 14px; font-size: 1rem; }
+  .viz { padding: 10px 10px 8px; }
+  .plasma { padding: 18px; }
+  .plasma-grid { gap: 8px; }
+  .plasma-cell figcaption { font-size: .74rem; }
+  .plasma-foot { flex-direction: column; align-items: flex-start; }
   .news li, .timeline > li, .skills { grid-template-columns: 1fr; gap: 4px; }
 }
