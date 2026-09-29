@@ -193,19 +193,14 @@ main { flex: 1; }
 .viz-caption.final { font-family: var(--serif); font-weight: 600; font-size: 1rem; }
 .viz-note { font-size: .74rem; color: var(--muted); }
 
-.plasma { padding: 22px 24px; margin-bottom: 16px; }
-.plasma h3 { font-size: 1.15rem; }
-.plasma-lead { font-size: .95rem; margin: 6px 0 16px; max-width: 760px; }
-.plasma-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.plasma-cell { margin: 0; }
-.plasma-cell canvas { display: block; width: 100%; aspect-ratio: 1; border-radius: 8px; background: var(--line); }
-.plasma-cell figcaption { font-size: .88rem; margin-top: 6px; text-align: center; }
-.plasma-cell figcaption span { display: inline-block; }
-.plasma-foot { display: flex; gap: 14px; align-items: center; margin-top: 14px; font-size: .8rem; color: var(--muted); }
-.cbar { flex: none; display: flex; align-items: center; gap: 6px; font-size: .8rem; color: var(--muted); }
-.cbar i {
-  display: block; width: 90px; height: 10px; border-radius: 3px;
-  background: linear-gradient(90deg, #053061, #2166ac, #4393c3, #92c5de, #d1e5f0, #f7f7f7, #fddbc7, #f4a582, #d6604d, #b2182b, #67001f);
+.plasma { padding: 14px; margin-bottom: 16px; display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: center; }
+.plasma h3 { font-size: 1.1rem; }
+.plasma p { margin: 4px 0 6px; font-size: .95rem; }
+.plasma-media { position: relative; }
+.plasma-canvas { display: block; width: 100%; aspect-ratio: 2 / 1; border-radius: 10px; background: var(--line); }
+.plasma-btn {
+  position: absolute; right: 8px; bottom: 8px; width: 28px; height: 28px; border-radius: 50%;
+  border: none; background: rgba(15, 20, 25, .5); color: #fff; font-size: 11px; cursor: pointer;
 }
 
 /* ---------- Courses ---------- */
@@ -259,9 +254,7 @@ footer { margin-top: 40px; color: var(--muted); font-size: .88rem; }
   .pub { grid-template-columns: 1fr; padding: 18px; gap: 12px; }
   .pub-tag { height: auto; width: fit-content; padding: 6px 14px; font-size: 1rem; }
   .viz { padding: 10px 10px 8px; }
-  .plasma { padding: 18px; }
-  .plasma-grid { gap: 8px; }
-  .plasma-cell figcaption { font-size: .74rem; }
-  .plasma-foot { flex-direction: column; align-items: flex-start; }
+  .plasma { grid-template-columns: 1fr; gap: 12px; }
+  .plasma-canvas { aspect-ratio: 3 / 1; }
   .news li, .timeline > li, .skills { grid-template-columns: 1fr; gap: 4px; }
 }

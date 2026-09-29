@@ -37,13 +37,13 @@ window.VIZ_DATA = {
   },
 
   plasma: {
-    // Real Tokam2D density fluctuations: 48 consecutive snapshots per system (every 4th saved frame),
-    // colour-mapped offline (RdBu, symmetric scale per system) into a sprite sheet of 8 x 6 frames.
-    frames: 48, cols: 8, size: 128, fps: 10,
-    systems: [
-      { file: 'assets/viz/plasma_sim86.webp', g: 0.051, kappa: 1.42 },
-      { file: 'assets/viz/plasma_sim97.webp', g: 0.257, kappa: 2.31 },
-      { file: 'assets/viz/plasma_sim352.webp', g: 0.447, kappa: 3.3 },
-    ],
+    // Real Tokam2D density fluctuations (simulation 151, g = 0.39, kappa = 3.48): 64 snapshots, every 2nd
+    // saved frame, on y in [0, 32] x x in [0, 64] (rho_0 units, half of the periodic domain), upsampled x2
+    // by Fourier interpolation (exact at the original grid points). Stored as grey levels:
+    // value = (grey / 255 - 0.5) * 2 * vmax. Rows run from y = 0 (top of the sprite) to y = 32.
+    // The last 12 frames are blended into the frames preceding the first one so the loop has no jump.
+    file: 'assets/viz/plasma_sim151.webp', frames: 64, cols: 8, w: 256, h: 128, fps: 14,
+    vmax: 27.96, xmax: 64, ymax: 32,
+    cmap: ['#5e4fa2', '#3387bc', '#66c2a5', '#aadca4', '#e6f598', '#fffebe', '#fee08b', '#fdad60', '#f46d43', '#d43d4f', '#9e0142'],
   },
 };

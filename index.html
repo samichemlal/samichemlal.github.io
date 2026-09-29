@@ -189,16 +189,14 @@
     </article>
 
     <section class="card plasma" aria-labelledby="plasma-title">
-      <div class="viz-head"><h3 id="plasma-title">Application · plasma turbulence</h3><button class="viz-btn" type="button">❚❚ Pause</button></div>
-      <p class="plasma-lead">Many physical dynamics, one family. Both papers use 400 Tokam2D simulations of plasma turbulence, each with its own interchange parameter <i>g</i> and density-gradient drive <i>κ</i>. They learn compact representations across the training simulations, then recover <i>g</i> and <i>κ</i> of held-out simulations from short trajectories.</p>
-      <div class="plasma-grid">
-        <figure class="plasma-cell"><canvas role="img" aria-label="Turbulent density field, g = 0.051, kappa = 1.42"></canvas><figcaption><span><i>g</i> = 0.051</span> · <span><i>κ</i> = 1.42</span></figcaption></figure>
-        <figure class="plasma-cell"><canvas role="img" aria-label="Turbulent density field, g = 0.257, kappa = 2.31"></canvas><figcaption><span><i>g</i> = 0.257</span> · <span><i>κ</i> = 2.31</span></figcaption></figure>
-        <figure class="plasma-cell"><canvas role="img" aria-label="Turbulent density field, g = 0.447, kappa = 3.30"></canvas><figcaption><span><i>g</i> = 0.447</span> · <span><i>κ</i> = 3.30</span></figcaption></figure>
+      <div class="plasma-media">
+        <canvas class="plasma-canvas" role="img" aria-label="Animated turbulent plasma density field from a Tokam2D simulation."></canvas>
+        <button class="plasma-btn" type="button"></button>
       </div>
-      <div class="plasma-foot">
-        <span class="cbar">− <i></i> +</span>
-        <span>Density fluctuation ñ from the simulation output (128 × 128 grid): 48 consecutive snapshots per system, looped. Symmetric colour scale per system.</span>
+      <div>
+        <h3 id="plasma-title">Application: dynamical systems</h3>
+        <p>One example is turbulent plasma, which appears in both papers.</p>
+        <span class="viz-note">Real Tokam2D simulation data</span>
       </div>
     </section>
 

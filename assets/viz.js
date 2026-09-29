@@ -647,31 +647,50 @@
     };
   }
 
-  // ---------- plasma: real snapshots ----------
+  // ---------- plasma: real snapshots, compact ----------
   function plasma(root) {
     const P = D.plasma;
-    const figs = [...root.querySelectorAll('.plasma-cell')];
-    const btn = root.querySelector('.viz-btn');
-    const sprites = [];
-    let loaded = false, playing = !reduce, visible = false, raf = null, t0 = 0, frameIdx = 0;
+    const cv = root.querySelector('canvas'), ctx = cv.getContext('2d');
+    const btn = root.querySelector('.plasma-btn');
+    const work = document.createElement('canvas'), wctx = work.getContext('2d', { willReadFrequently: true });
+    const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+    const stops = P.cmap.map(hex);
+    const lut = new Uint8ClampedArray(256 * 3);
+    for (let i = 0; i < 256; i++) {
+      const x = (i / 255) * (stops.length - 1), k = Math.min(stops.length - 2, Math.floor(x)), f = x - k;
+      for (let j = 0; j < 3; j++) lut[3 * i + j] = lerp(stops[k][j], stops[k + 1][j], f);
+    }
+    let img = null, playing = !reduce, visible = false, raf = null, t0 = 0, frameIdx = 0;
 
-    function drawFrame() {
-      figs.forEach((f, k) => {
-        const cv = f.querySelector('canvas'), img = sprites[k];
-        if (!img || !img.complete || !img.naturalWidth) return;
-        const w = cv.clientWidth, dpr = Math.min(2, window.devicePixelRatio || 1);
-        if (cv.width !== Math.round(w * dpr)) { cv.width = cv.height = Math.round(w * dpr); }
-        const c = cv.getContext('2d');
-        const i = frameIdx % P.frames, sx = (i % P.cols) * P.size, sy = Math.floor(i / P.cols) * P.size;
-        c.imageSmoothingEnabled = true;
-        c.drawImage(img, sx, sy, P.size, P.size, 0, 0, cv.width, cv.height);
-      });
+    function draw() {
+      if (!img || !img.complete || !img.naturalWidth) return;
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      const W = Math.round(cv.clientWidth * dpr), H = Math.round(cv.clientHeight * dpr);
+      if (!W || !H) return;
+      if (cv.width !== W || cv.height !== H) { cv.width = work.width = W; cv.height = work.height = H; }
+      // cover: crop the 2:1 frame to the canvas aspect ratio, centred
+      const i = frameIdx % P.frames, fx = (i % P.cols) * P.w, fy = Math.floor(i / P.cols) * P.h;
+      let sw = P.w, sh = P.h;
+      if (W / H > P.w / P.h) sh = (P.w * H) / W; else sw = (P.h * W) / H;
+      wctx.imageSmoothingEnabled = true;
+      wctx.imageSmoothingQuality = 'high';
+      wctx.drawImage(img, fx + (P.w - sw) / 2, fy + (P.h - sh) / 2, sw, sh, 0, 0, W, H);
+      try {
+        const id = wctx.getImageData(0, 0, W, H), px = id.data;
+        for (let q = 0; q < px.length; q += 4) {
+          const g = 3 * px[q];
+          px[q] = lut[g]; px[q + 1] = lut[g + 1]; px[q + 2] = lut[g + 2];
+        }
+        ctx.putImageData(id, 0, 0);
+      } catch (e) {
+        ctx.drawImage(work, 0, 0); // pixel access blocked (file://): grey levels
+      }
     }
     function loop(now) {
       raf = null;
       if (!playing || !visible) return;
       const i = Math.floor(((now - t0) / 1000) * P.fps);
-      if (i !== frameIdx) { frameIdx = i; drawFrame(); }
+      if (i !== frameIdx) { frameIdx = i; draw(); }
       raf = requestAnimationFrame(loop);
     }
     function start() {
@@ -679,23 +698,22 @@
       t0 = performance.now() - (frameIdx / P.fps) * 1000;
       raf = requestAnimationFrame(loop);
     }
-    function setBtn() { btn.textContent = playing ? '❚❚ Pause' : '▶ Play'; }
+    function setBtn() {
+      btn.textContent = playing ? '❚❚' : '▶';
+      btn.setAttribute('aria-label', playing ? 'Pause animation' : 'Play animation');
+    }
     btn.addEventListener('click', () => { playing = !playing; setBtn(); start(); });
     setBtn();
     new IntersectionObserver(([e]) => {
       visible = e.isIntersecting;
-      if (visible && !loaded) {
-        loaded = true;
-        P.systems.forEach((s, k) => {
-          const img = new Image();
-          img.onload = drawFrame;
-          img.src = s.file;
-          sprites[k] = img;
-        });
+      if (visible && !img) {
+        img = new Image();
+        img.onload = draw;
+        img.src = P.file;
       }
       start();
     }, { threshold: 0.2 }).observe(root);
-    new ResizeObserver(drawFrame).observe(root);
+    new ResizeObserver(draw).observe(cv);
   }
 
   // ---------- wire up ----------
